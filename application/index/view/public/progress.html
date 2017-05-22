@@ -1,0 +1,73 @@
+<style>
+    .progress {
+        width: 100px;
+        height: 90px;
+        position: fixed;
+        color:white;
+        background-color: #000000;
+        border-radius: 10px;
+        Alpha(Opacity = 50);
+        -moz-opacity: 0.5;
+        opacity: 0.5;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 90px;
+        display: none;
+    }
+    .wrapper{
+        position: fixed;
+        background-color: #000000;
+        Alpha(Opacity = 30);
+        -moz-opacity: 0.3;
+        opacity: 0.3;
+        display: none;
+    }
+</style>
+<!--提示信息-->
+<div class="progress" id="progress">
+    <span style="color:white;font-size: larger;" id="progress-hint">[hint]</span>
+</div>
+<!--wrapper-->
+<div class="wrapper" id="wrapper">
+</div>
+
+<script>
+    //定位progress于屏幕中央
+    var progressHeight = $("#progress").css('height');
+    progressHeight = parseInt(progressHeight.substring(0, progressHeight.indexOf("px", 0)));
+    var progressWidth = $("#progress").css('width');
+    progressWidth = parseInt(progressWidth.substring(0, progressWidth.indexOf("px", 0)));
+    var viewPortWidth = window.innerWidth;//视口宽
+    var viewPortHeight = window.innerHeight;//视口高
+    var translateX = (viewPortWidth - progressWidth) / 2;
+    var translateY = (viewPortHeight - progressHeight) / 2;
+    $("#progress").css('left', translateX);
+    $("#progress").css('top', translateY);
+    //定位wrapper充斥整个屏幕
+    $("#wrapper").css('width',viewPortWidth);
+    $("#wrapper").css('height',viewPortHeight);
+    $("#wrapper").css('left',0);
+    $("#wrapper").css('top',0);
+
+    var worker = null;
+
+    function showProgress() {
+        $("#progress").fadeIn('fast');
+        $("#wrapper").fadeIn('fast');
+        worker = setInterval(changeProgWord(),100);
+    }
+    function hideProgress() {
+        $("#progress").fadeOut('fast');
+        $("#wrapper").fadeOut('fast');
+        clearInterval(worker);
+    }
+
+    function changeProgWord(){
+        if($("#progress-hint").html() == '请等待...'){
+            $("#progress-hint").html('请等待..');
+        }
+        if($("#progress-hint").html() == '请等待..'){
+            $("#progress-hint").html('请等待...');
+        }
+    }
+</script>

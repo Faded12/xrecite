@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{$title}</title>
+    {include file="public/resource"}
+    <link rel="stylesheet" href="__STATIC__/css/base.css?v=1">
+    <!--<include file="public/resource"/>-->
+</head>
+<style>
+    .weui_tabbar_icon{
+        background: url(__STATIC__/img/icon.png) no-repeat 0 0;
+        background-size:260px 190px;
+    }
+    .icon1{
+        background-position:0 -36px;
+    }
+    .icon2{
+        background-position:-36px 2px;
+    }
+    .icon3{
+        background-position:-106px 2px;
+    }
+    .icon4{
+        background-position:-71px 2px;
+    }
+</style>
+<body style="">
+{include file="public/handleMessageModal"}
+<!--<div class="container-fluid" ng-app="myApp" ng-controller="customersCtrl">
+
+-->
+    {__CONTENT__}
+<!--</div>-->
+<div class="weui_tab">
+    <div class="weui_tab_bd">
+
+    </div>
+    <div class="weui_tabbar">
+        <a href="javascript:;" class="weui_tabbar_item weui_bar_item_on">
+            <div class="weui_tabbar_icon icon1">
+            </div>
+            <p class="weui_tabbar_label">首页</p>
+        </a>
+        <a href="javascript:;" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon icon2">
+            </div>
+            <p class="weui_tabbar_label">分类</p>
+        </a>
+        <a href="javascript:;" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon icon3">
+            </div>
+            <p class="weui_tabbar_label">新建</p>
+        </a>
+        <a href="javascript:;" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon icon4">
+            </div>
+            <p class="weui_tabbar_label">我的</p>
+        </a>
+    </div>
+</div>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261456749'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261456749%26show%3Dpic' type='hidden'%3E%3C/script%3E"));</script>
+</body>
+</html>

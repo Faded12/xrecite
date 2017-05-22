@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{__NOLAYOUT__}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$title}</title>
+    {include file="public/resource"}
+    <style>
+        .center,.loginBtn,.bottom{margin-top: 60pt}
+        /*.center1{margin-top: 60pt}*/
+    </style>
+</head>
+<body>
+{include file="public/handleMessageModal"}
+<div style="margin: 5pt">
+<div class="top col-xs-12 col-md-4 col-md-offset-4"></div>
+</div><br/>
+<div class="center">
+<div class="lab col-xs-12 col-md-4 col-md-offset-4">
+    <i class="weui_tabbar_icon col-xs-3 icon1"></i><input type="number" class="col-xs-6 text" placeholder="请输入手机号">
+</div>
+<div class="lab col-xs-12 col-md-4 col-md-offset-4">
+    <i class="weui_tabbar_icon col-xs-3 icon8"></i><input type="number" class="col-xs-4 text" placeholder="请输入验证码"><span class="idCode">提取验证码</span>
+</div>
+<div class="lab col-xs-12 col-md-4 col-md-offset-4">
+    <i class="weui_tabbar_icon col-xs-3 icon2"></i><input type="password" class="col-xs-6 text" placeholder="密码">
+</div>
+</div>
+<button type="button" class="loginBtn col-xs-12 col-md-4 col-md-offset-4" id="toLogin">注册</button>
+<div class="col-xs-12 text-center bottom"><span style="color: #9ca5a0">使用第三方登录&nbsp;&nbsp;</span></div>
+<div class="thirdParty text-center col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
+    <span class="thirdPartyIcon col-xs-4   "><i class="icon4"></i></span>
+    <span class="thirdPartyIcon col-xs-4   "><i class="icon5"></i></span>
+    <span class="thirdPartyIcon col-xs-4   "><i class="icon6"></i></span>
+</div>
+<link rel="stylesheet" href="__STATIC__/css/login.css">
+<script src="__STATIC__/js/controller/register.controller.js"></script>
+</body>
+</html>

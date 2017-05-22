@@ -1,0 +1,49 @@
+
+<style>
+    .message{
+        width: 100px;
+        height: 90px;
+        position: fixed;
+        color:white;
+        background-color: #000000;
+        border-radius: 10px;
+        Alpha(Opacity = 30);
+        -moz-opacity: 0.3;
+        opacity: 0.3;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 90px;
+        display:none;
+    }
+</style>
+
+<div class="row" id="message-container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 message" id="message">
+    </div>
+</div>
+
+<script>
+    //定位message于屏幕中央
+    var messageHeight = $("#message").css('height');
+    messageHeight = parseInt(messageHeight.substring(0, messageHeight.indexOf("px", 0)));
+    var messageWidth = $("#message").css('width');
+    messageWidth = parseInt(messageWidth.substring(0, messageWidth.indexOf("px", 0)));
+    var viewPortWidth = window.innerWidth;//视口宽
+    var viewPortHeight = window.innerHeight;//视口高
+    var translateX = (viewPortWidth - messageWidth) / 2;
+    var translateY = (viewPortHeight - messageHeight) / 2;
+    $("#message").css('left', translateX);
+    $("#message").css('top', translateY);
+
+    /**
+     * @param messageText 提示信息
+     * @param miliseconds 持续毫秒
+     */
+    function showMessage(messageText,miliseconds){
+        $("#message").html(messageText);
+        $("#message").fadeIn("fast");
+        setTimeout(function(){
+            $("#message").fadeOut("fast");
+        },miliseconds);
+    }
+</script>
